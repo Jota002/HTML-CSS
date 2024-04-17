@@ -1,0 +1,77 @@
+@charset "UTF-8";
+
+/* Todas as demais medias */
+
+/*typical Device breakspoints
+------------------------------
+Pequenas telas: Até 600px
+Celulares: De 600px até 768px
+Tablet: 768px  até 992px
+Desktop: 992px até 1200px
+Grandes telas: Acima de 1200px
+*/
+
+@media print {
+
+    * {
+        font-family: 'Courier New', Courier, monospace;
+    }
+   body { 
+    background-image: url(../imagens/back-print.jpg);
+    
+    }
+
+    main {
+        border: 2px solid black;
+    }
+
+    main::after {
+        content: 'Essa impressaão foi feita através de Min';
+        text-decoration: overline;
+    }
+    main h1 {
+        text-shadow: none;
+        color: black;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:992px) {
+   body {
+       background-image: url(../imagens/back-tablet.jpg);
+   }
+
+    img#phone {display: none; }
+    img#tablet {display: block;}
+    img#print {display: none;}
+    img#TV {display: none;}
+    img#PC {display: none;}
+
+}
+
+
+@media screen and (min-width:992px) and (max-width:1200px) {
+    body {
+        background-image: url(../imagens/back-pc.jpg);
+    }
+    img#phone {display: none; }
+    img#tablet {display: none;}
+    img#print {display:none}
+    img#TV {display: none;}
+    img#PC {display: block;}
+}
+
+@media screen and (min-width:1200px) {
+     body {
+        background-image: url(../imagens/back-tv.jpg); 
+     }
+
+     main {
+        width: 700px;
+    }
+
+     img#phone {display: none; }
+    img#tablet {display: none}
+    img#print {display: none;}
+    img#TV {display: block;}
+    img#PC {display: none;}
+}
